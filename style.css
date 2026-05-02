@@ -1,14 +1,9 @@
-/* DRAMA CLUB WEBSITE - PROFESSIONAL STYLESHEET
-   Designed by Nguyễn Thùy Linh • 12A7 
-*/
-
-/* Nhúng Font trực tiếp vào CSS để tránh lỗi */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap');
-
+/* --- THIẾT LẬP CHUNG --- */
 :root {
-    --gold: #dfbb6e;
+    --primary-green: #26bc8f;
     --dark: #0a0a0a;
     --light-dark: #121212;
+    --gold: #dfbb6e;
     --transition: all 0.4s ease;
 }
 
@@ -23,89 +18,99 @@ html {
 }
 
 body {
-    /* Ép dùng font Poppins, nếu lỗi thì dùng sans-serif mặc định */
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
     background-color: var(--dark);
     color: white;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Hiệu ứng ánh đèn Spotlight */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hiệu ứng Spotlight */
 .spotlight-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 30%, rgba(223, 187, 110, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 30%, rgba(38, 188, 143, 0.05) 0%, transparent 70%);
     pointer-events: none;
     z-index: 1;
 }
 
-/* --- THANH ĐIỀU HƯỚNG (NAV) - ĐÃ SỬA LỖI FONT --- */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 8%;
+/* --- THANH ĐIỀU HƯỚNG TICKETBOX STYLE --- */
+.main-nav {
     position: absolute;
     width: 100%;
-    z-index: 10;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.nav-top {
+    background-color: var(--primary-green);
+    padding: 15px 0;
 }
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    letter-spacing: 2px;
     color: white;
+    letter-spacing: 1px;
 }
 
 .logo span {
-    color: var(--gold);
+    color: #1a1a1a;
 }
 
-nav ul {
+.nav-bottom {
+    background-color: #000000;
+    padding: 12px 0;
+    border-bottom: 1px solid #222;
+}
+
+.menu-links {
     display: flex;
+    justify-content: center; /* CANH GIỮA MENU */
     list-style: none;
+    gap: 35px;
 }
 
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
+.menu-links li a {
     text-decoration: none;
-    color: #eeeeee;
-    font-family: 'Poppins', sans-serif; /* Đảm bảo font Poppins cho menu */
-    font-size: 0.85rem;
+    color: #ffffff;
+    font-size: 0.9rem;
     font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
     transition: var(--transition);
 }
 
-nav ul li a:hover {
-    color: var(--gold);
+.menu-links li a:hover {
+    color: var(--primary-green);
 }
 
 /* --- HERO SECTION --- */
 .hero {
-    min-height: 110vh;
+    min-height: 115vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 150px;
     background: linear-gradient(to bottom, rgba(10,10,10,0.6), rgba(10,10,10,1)),
                 url('https://images.unsplash.com/photo-1503095396549-807a89010046?q=80&w=2070') no-repeat center/cover;
 }
 
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
+    font-size: 4.2rem;
     margin-bottom: 20px;
-    white-space: nowrap; /* Giữ 1 hàng */
+    white-space: nowrap;
 }
 
 .hero-content h1 span {
@@ -115,88 +120,77 @@ nav ul li a:hover {
 
 .hero-content p {
     font-size: 1.1rem;
-    color: #cccccc;
+    color: #ccc;
     margin-bottom: 40px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Buttons */
 .cta-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary {
     padding: 14px 30px;
+    background: var(--gold);
+    color: #000;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     border-radius: 2px;
-    transition: var(--transition);
 }
 
-.btn-primary { background: var(--gold); color: #000; }
-.btn-secondary { border: 1px solid white; color: white; }
-
-.btn-primary:hover { transform: translateY(-3px); opacity: 0.9; }
-.btn-secondary:hover { background: white; color: #000; }
+.btn-secondary {
+    padding: 14px 30px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 2px;
+}
 
 /* --- CÁC PHẦN NỘI DUNG (GIÚP WEB DÀI RA) --- */
 section {
-    padding: 120px 0;
-    display: block;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 140px 0;
 }
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
+    font-size: 3rem;
     color: var(--gold);
     text-align: center;
     margin-bottom: 60px;
 }
 
-/* About */
 .about-section { background-color: var(--light-dark); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.about-text p { font-size: 1.05rem; color: #999; margin-bottom: 20px; }
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+.about-text p { font-size: 1.1rem; color: #999; margin-bottom: 20px; }
 
-/* Quote - ĐÃ CHỈNH NHỎ */
+.about-stats { display: flex; justify-content: space-around; text-align: center; }
+.stat-item h3 { font-size: 3.5rem; color: var(--gold); font-family: 'Playfair Display', serif; }
+
 .quote-section { background: var(--dark); text-align: center; }
 blockquote {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem; /* Nhỏ gọn thanh lịch */
+    font-size: 1.4rem;
     color: var(--gold);
     font-style: italic;
-    max-width: 800px;
-    margin: 0 auto;
+    line-height: 1.8;
 }
 
-/* Plays Cards */
-.plays-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.play-card { background: #1a1a1a; padding: 0; border: 1px solid #222; transition: 0.3s; }
-.play-card:hover { border-color: var(--gold); transform: translateY(-5px); }
-.play-img { height: 250px; background: #252525; }
+.plays-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.play-card { background: #1a1a1a; border: 1px solid #222; transition: 0.3s; }
+.play-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+.play-img { height: 280px; background: #252525; }
 .play-info { padding: 25px; }
-.play-info h3 { color: var(--gold); font-family: 'Playfair Display', serif; margin-bottom: 10px; }
 
-/* Footer - ĐÃ CHỈNH NHỎ */
+.contact-section { background: var(--light-dark); text-align: center; }
+.contact-info p { font-size: 1.1rem; color: #888; margin-bottom: 10px; }
+
 footer {
+    padding: 60px 0;
     text-align: center;
-    padding: 50px 0;
-    background: #050505;
     border-top: 1px solid #111;
+    font-size: 0.75rem;
     color: #444;
-    font-size: 0.7rem;
     letter-spacing: 1px;
 }
