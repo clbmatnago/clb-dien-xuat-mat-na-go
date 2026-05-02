@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLB Kịch - Nơi Ánh Đèn Tỏa Sáng</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Chèn font chữ sang trọng từ Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Lớp phủ tạo hiệu ứng ánh đèn sân khấu -->
     <div class="spotlight-overlay"></div>
 
     <nav>
         <div class="logo">DRAMA <span>CLUB</span></div>
         <ul>
             <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Vở diễn</a></li>
-            <li><a href="#">Thành viên</a></li>
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#plays">Vở diễn</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
         </ul>
     </nav>
 
@@ -28,20 +26,74 @@
             <h1 class="reveal-text">Khi Màn Nhung <span>Hé Mở</span></h1>
             <p>Nơi những tâm hồn nghệ sĩ gặp nhau và viết nên những câu chuyện huyền thoại.</p>
             <div class="cta-buttons">
-                <a href="#" class="btn-primary">Xem Lịch Diễn</a>
-                <a href="#" class="btn-secondary">Gia Nhập Ngay</a>
+                <a href="#plays" class="btn-primary">Xem Lịch Diễn</a>
+                <a href="#contact" class="btn-secondary">Gia Nhập Ngay</a>
             </div>
         </div>
     </header>
 
+    <!-- PHẦN 1: GIỚI THIỆU (ABOUT) -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Về Chúng Tôi</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>CLB Kịch không chỉ là một sân khấu, mà là ngôi nhà của những giấc mơ nghệ thuật. Chúng tôi cùng nhau rèn luyện kỹ năng diễn xuất, thiết kế phục trang và cảm thụ cái đẹp của văn học kịch nghệ.</p>
+                    <p>Mỗi vở diễn là một hành trình khám phá bản thân, nơi chúng tôi gác lại cái tôi cá nhân để sống trọn vẹn trong cuộc đời của nhân vật.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item"><h3>10+</h3><p>Vở diễn/Năm</p></div>
+                    <div class="stat-item"><h3>50+</h3><p>Thành viên</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHẦN 2: TRÍCH DẪN (QUOTE) -->
     <section class="quote-section">
         <blockquote>
             "Gác lại bản ngã đời thường, bước lên thánh đường nghệ thuật. Nơi mỗi ánh đèn sân khấu thắp sáng một giấc mơ nghệ sĩ."
+            <cite>— William Shakespeare</cite>
         </blockquote>
     </section>
 
+    <!-- PHẦN 3: VỞ DIỄN NỔI BẬT (FEATURED PLAYS) -->
+    <section id="plays" class="plays-section">
+        <div class="container">
+            <h2 class="section-title">Vở Diễn Nổi Bật</h2>
+            <div class="plays-grid">
+                <div class="play-card">
+                    <div class="play-img"></div>
+                    <div class="play-info">
+                        <h3>Lời Nguyền Thời Gian</h3>
+                        <p>Một câu chuyện đầy kịch tính về tình yêu và sự hy sinh.</p>
+                    </div>
+                </div>
+                <div class="play-card">
+                    <div class="play-img"></div>
+                    <div class="play-info">
+                        <h3>Bóng Đêm Sân Khấu</h3>
+                        <p>Khám phá những góc khuất tâm lý đầy ám ảnh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHẦN 4: LIÊN HỆ (CONTACT) -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Liên Hệ</h2>
+            <div class="contact-info">
+                <p>Địa chỉ: Phòng truyền thống - Trường THPT của bạn</p>
+                <p>Email: clbkich.contact@gmail.com</p>
+                <p>Facebook: /CLBKichThpt</p>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>Designed by CLB Mặt Nạ Gỗ</p>
+        <p>Designed by Nguyễn Thùy Linh • 12A7</p>
     </footer>
 
 </body>
