@@ -5,22 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLB Diễn Xuất Mặt Nạ Gỗ</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="spotlight-overlay"></div>
 
-    <nav>
-        <div class="logo">CLB <span>MẶT NẠ GỖ</span></div>
-        <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#about">Giới thiệu</a></li>
-            <li><a href="#about">Vở diễn</a></li>
-            <li><a href="#about">Đặt vé</a></li>
-            <li><a href="#plays">Diễn viên</a></li>
-            <li><a href="#contact">Liên hệ</a></li>
-        </ul>
+    <nav class="main-nav">
+        <div class="nav-top">
+            <div class="container">
+                <div class="logo">CLB <span>MẶT NẠ GỖ</span></div>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <div class="container">
+                <ul class="menu-links">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#plays">Vở diễn</a></li>
+                    <li><a href="#tickets">Đặt vé</a></li>
+                    <li><a href="#actors">Diễn viên</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <header class="hero">
@@ -34,7 +42,6 @@
         </div>
     </header>
 
-    <!-- PHẦN 1: GIỚI THIỆU (ABOUT) -->
     <section id="about" class="about-section">
         <div class="container">
             <h2 class="section-title">Về Chúng Tôi</h2>
@@ -51,15 +58,15 @@
         </div>
     </section>
 
-    <!-- PHẦN 2: TRÍCH DẪN (QUOTE) -->
     <section class="quote-section">
-        <blockquote>
-            "Gác lại bản ngã đời thường, bước lên thánh đường nghệ thuật. Nơi mỗi ánh đèn sân khấu thắp sáng một giấc mơ nghệ sĩ."
-            <cite>— William Shakespeare</cite>
-        </blockquote>
+        <div class="container">
+            <blockquote>
+                "Gác lại bản ngã đời thường, bước lên thánh đường nghệ thuật. Nơi mỗi ánh đèn sân khấu thắp sáng một giấc mơ nghệ sĩ."
+                <cite>— William Shakespeare</cite>
+            </blockquote>
+        </div>
     </section>
 
-    <!-- PHẦN 3: VỞ DIỄN NỔI BẬT (FEATURED PLAYS) -->
     <section id="plays" class="plays-section">
         <div class="container">
             <h2 class="section-title">Vở Diễn Nổi Bật</h2>
@@ -82,20 +89,21 @@
         </div>
     </section>
 
-    <!-- PHẦN 4: LIÊN HỆ (CONTACT) -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title">Liên Hệ</h2>
             <div class="contact-info">
-                <p>Địa chỉ: 37 Lê Ngã, phường Tân Phú, Thành phố Hồ Chí Minh</p>
-                <p>Email: matnagoig@gmail.com</p>
-                <p>Facebook: CLB DIỄN XUẤT MẶT NẠ GỖ</p>
+                <p>📍 Địa chỉ: 37 Lê Ngã, phường Tân Phú, Thành phố Hồ Chí Minh</p>
+                <p>📧 Email: matnagoig@gmail.com</p>
+                <p>📱 Facebook: CLB DIỄN XUẤT MẶT NẠ GỖ</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>Designed by CLB MẶT NẠ GỖ</p>
+        <div class="container">
+            <p>Designed by CLB MẶT NẠ GỖ</p>
+        </div>
     </footer>
 
 </body>
