@@ -1,15 +1,15 @@
-/* 
-   DRAMA CLUB WEBSITE - FULL STYLESHEET
+/* DRAMA CLUB WEBSITE - PROFESSIONAL STYLESHEET
    Designed by Nguyễn Thùy Linh • 12A7 
 */
 
+/* Nhúng Font trực tiếp vào CSS để tránh lỗi */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap');
+
 :root {
     --gold: #dfbb6e;
-    --velvet: #800000;
     --dark: #0a0a0a;
-    --light-dark: #151515;
-    --glass: rgba(255, 255, 255, 0.1);
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --light-dark: #121212;
+    --transition: all 0.4s ease;
 }
 
 * {
@@ -19,35 +19,36 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Cuộn trang mượt mà khi nhấn vào menu */
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    /* Ép dùng font Poppins, nếu lỗi thì dùng sans-serif mặc định */
+    font-family: 'Poppins', sans-serif; 
     background-color: var(--dark);
     color: white;
-    overflow-x: hidden;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Hiệu ứng ánh đèn Spotlight mờ ảo */
+/* Hiệu ứng ánh đèn Spotlight */
 .spotlight-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 30%, rgba(223, 187, 110, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 30%, rgba(223, 187, 110, 0.08) 0%, transparent 70%);
     pointer-events: none;
     z-index: 1;
 }
 
-/* --- NAVIGATION --- */
+/* --- THANH ĐIỀU HƯỚNG (NAV) - ĐÃ SỬA LỖI FONT --- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 8%;
+    padding: 25px 8%;
     position: absolute;
     width: 100%;
     z-index: 10;
@@ -55,9 +56,10 @@ nav {
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 1.6rem;
+    font-weight: 700;
     letter-spacing: 2px;
+    color: white;
 }
 
 .logo span {
@@ -70,17 +72,18 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 35px;
+    margin-left: 30px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #eeeeee;
+    font-family: 'Poppins', sans-serif; /* Đảm bảo font Poppins cho menu */
     font-size: 0.85rem;
-    text-transform: uppercase;
-    transition: var(--transition);
-    letter-spacing: 1px;
     font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
 }
 
 nav ul li a:hover {
@@ -89,28 +92,20 @@ nav ul li a:hover {
 
 /* --- HERO SECTION --- */
 .hero {
-    min-height: 110vh; /* Kéo dài trang chủ */
+    min-height: 110vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
-    background: linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,1)),
+    background: linear-gradient(to bottom, rgba(10,10,10,0.6), rgba(10,10,10,1)),
                 url('https://images.unsplash.com/photo-1503095396549-807a89010046?q=80&w=2070') no-repeat center/cover;
-}
-
-.hero-content {
-    z-index: 2;
-    max-width: 1100px;
 }
 
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
-    margin-bottom: 25px;
-    line-height: 1.1;
-    animation: fadeInUp 1.5s ease;
-    white-space: nowrap; /* Giữ chữ trên một hàng */
+    font-size: 4rem;
+    margin-bottom: 20px;
+    white-space: nowrap; /* Giữ 1 hàng */
 }
 
 .hero-content h1 span {
@@ -120,10 +115,11 @@ nav ul li a:hover {
 
 .hero-content p {
     font-size: 1.1rem;
-    color: #bbb;
-    margin-bottom: 45px;
-    letter-spacing: 1px;
-    animation: fadeInUp 2s ease;
+    color: #cccccc;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Buttons */
@@ -131,183 +127,76 @@ nav ul li a:hover {
     display: flex;
     gap: 20px;
     justify-content: center;
-    animation: fadeInUp 2.5s ease;
 }
 
 .btn-primary, .btn-secondary {
-    padding: 16px 35px;
+    padding: 14px 30px;
     text-decoration: none;
     font-weight: 600;
-    border-radius: 4px;
-    transition: var(--transition);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border-radius: 2px;
+    transition: var(--transition);
 }
 
-.btn-primary {
-    background: var(--gold);
-    color: var(--dark);
+.btn-primary { background: var(--gold); color: #000; }
+.btn-secondary { border: 1px solid white; color: white; }
+
+.btn-primary:hover { transform: translateY(-3px); opacity: 0.9; }
+.btn-secondary:hover { background: white; color: #000; }
+
+/* --- CÁC PHẦN NỘI DUNG (GIÚP WEB DÀI RA) --- */
+section {
+    padding: 120px 0;
+    display: block;
 }
 
-.btn-secondary {
-    border: 1px solid white;
-    color: white;
-}
-
-.btn-primary:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(223, 187, 110, 0.3);
-}
-
-.btn-secondary:hover {
-    background: white;
-    color: var(--dark);
-}
-
-/* --- COMMON SECTION STYLES --- */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-section {
-    padding: 140px 0; /* Tăng khoảng cách để trang dài và thoáng */
-}
-
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3.2rem;
+    font-size: 2.8rem;
     color: var(--gold);
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
-/* --- ABOUT SECTION --- */
-.about-section {
-    background-color: var(--light-dark);
-}
+/* About */
+.about-section { background-color: var(--light-dark); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-text p { font-size: 1.05rem; color: #999; margin-bottom: 20px; }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    color: #999;
-    margin-bottom: 25px;
-}
-
-.about-stats {
-    display: flex;
-    justify-content: space-around;
-}
-
-.stat-item h3 {
-    font-size: 3.5rem;
-    color: var(--gold);
-    font-family: 'Playfair Display', serif;
-}
-
-.stat-item p {
-    color: #666;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-}
-
-/* --- QUOTE SECTION --- */
-.quote-section {
-    text-align: center;
-    background-color: var(--dark);
-}
-
+/* Quote - ĐÃ CHỈNH NHỎ */
+.quote-section { background: var(--dark); text-align: center; }
 blockquote {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; /* Chữ nhỏ lại theo ý bạn */
+    font-size: 1.3rem; /* Nhỏ gọn thanh lịch */
+    color: var(--gold);
     font-style: italic;
-    color: var(--gold);
-    max-width: 850px;
+    max-width: 800px;
     margin: 0 auto;
-    line-height: 1.8;
 }
 
-cite {
-    display: block;
-    margin-top: 25px;
-    color: #555;
-    font-style: normal;
-    font-size: 1rem;
-}
+/* Plays Cards */
+.plays-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.play-card { background: #1a1a1a; padding: 0; border: 1px solid #222; transition: 0.3s; }
+.play-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+.play-img { height: 250px; background: #252525; }
+.play-info { padding: 25px; }
+.play-info h3 { color: var(--gold); font-family: 'Playfair Display', serif; margin-bottom: 10px; }
 
-/* --- PLAYS SECTION --- */
-.plays-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-}
-
-.play-card {
-    background: #111;
-    border: 1px solid #222;
-    transition: var(--transition);
-}
-
-.play-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-10px);
-}
-
-.play-img {
-    height: 300px;
-    background: linear-gradient(45deg, #1a1a1a, #252525);
-}
-
-.play-info {
-    padding: 30px;
-}
-
-.play-info h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-/* --- CONTACT SECTION --- */
-.contact-section {
-    background-color: var(--light-dark);
-    text-align: center;
-}
-
-.contact-info p {
-    font-size: 1.2rem;
-    color: #888;
-    margin: 10px 0;
-}
-
-/* --- FOOTER --- */
+/* Footer - ĐÃ CHỈNH NHỎ */
 footer {
-    padding: 60px;
     text-align: center;
-    border-top: 1px solid #222;
+    padding: 50px 0;
+    background: #050505;
+    border-top: 1px solid #111;
     color: #444;
-    font-size: 0.75rem; /* Chữ footer nhỏ lại theo ý bạn */
+    font-size: 0.7rem;
     letter-spacing: 1px;
-}
-
-/* --- ANIMATIONS --- */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
